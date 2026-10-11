@@ -1,0 +1,5 @@
+# Home Assistant add-on repository for Nesh.
+# In Home Assistant: Settings, Add-ons, Add-on Store, three dots menu, Repositories,
+# then paste this repository's GitHub URL.
+name: Nesh add-ons
+maintainer: Nesh

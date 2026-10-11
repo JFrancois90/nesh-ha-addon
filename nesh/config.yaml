@@ -1,0 +1,41 @@
+name: Nesh
+version: "0.1.0"
+slug: nesh
+description: Logs how your heating behaves so Nesh can learn your home. Read only.
+arch:
+  - aarch64
+  - amd64
+init: false
+homeassistant_api: true
+startup: application
+boot: auto
+options:
+  home_id: ""
+  room_map: []
+  poll_seconds: 60
+  backfill_days: 30
+  backfill_now: false
+  control_enabled: false
+  dry_run: true
+  safety_floor: 14
+  log_level: info
+schema:
+  home_id: str
+  room_map:
+    - room: "match(^[a-z0-9_]+$)"
+      sensor: str?
+      humidity: str?
+      valve: str?
+      floor: int?
+  thermostat_entity: str?
+  hot_water_entity: str?
+  weather_entity: str?
+  poll_seconds: "int(10,3600)"
+  backfill_days: "int(0,365)"
+  backfill_now: bool
+  upload_url: url?
+  upload_token: password?
+  control_enabled: bool
+  dry_run: bool
+  safety_floor: "int(5,25)"
+  log_level: list(debug|info|warning|error)

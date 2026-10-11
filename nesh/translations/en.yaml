@@ -1,0 +1,43 @@
+configuration:
+  home_id:
+    name: Home ID
+    description: A short name for this home, lower case letters, digits and underscores only, for example myhome. Required.
+  room_map:
+    name: Room map corrections
+    description: Optional. Only fill this in if the proposed room map in the log is wrong. Each entry names a room and the entities for it.
+  thermostat_entity:
+    name: Thermostat entity
+    description: Optional. The Hive thermostat climate entity, if discovery picked the wrong one.
+  hot_water_entity:
+    name: Hot water entity
+    description: Optional. The hot water entity, if discovery picked the wrong one.
+  weather_entity:
+    name: Weather entity
+    description: Optional. The weather entity to use for outdoor conditions.
+  poll_seconds:
+    name: Safety poll interval (seconds)
+    description: Live changes arrive instantly; this extra check runs every so often in case one is missed.
+  backfill_days:
+    name: Days of history to copy
+    description: On first start, copy this many days of past readings from Home Assistant's history.
+  backfill_now:
+    name: Copy history again now
+    description: Turn on and restart to re-read history and fill any gaps. Safe to repeat. Turn off afterwards.
+  upload_url:
+    name: Upload address
+    description: Optional. Leave empty to keep all data on this machine only.
+  upload_token:
+    name: Upload key
+    description: Optional. Key sent with uploads, if the upload address needs one.
+  control_enabled:
+    name: Allow heating control
+    description: Off. Version 0.1.0 never changes your heating; this only enables dry run checks.
+  dry_run:
+    name: Dry run only
+    description: Keep on. Control commands are only written to the log.
+  safety_floor:
+    name: Safety floor (C)
+    description: Nesh will never ask for a room setpoint below this temperature.
+  log_level:
+    name: Log detail
+    description: How much detail to write to the add-on log.
